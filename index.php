@@ -9,6 +9,10 @@
 <body>
     <div id="app">
         <h2>Welcome {{name1}}</h2>
+        <br>
+        <span v-html="about"></span>
+        <br>
+        <span v-once>{{phone_no}}</span>
     </div>
     
     <script src="js/vue.js"></script>
@@ -16,7 +20,9 @@
         var app = new Vue({
             el:"#app",
             data:{
-                name1:"Md Kamrul Asad"
+                name1:"Md Kamrul Asad",
+                about:"Hei I am Md Kamrul Asad </br> Department is <b> CSE</b>",
+                phone_no:"01823-335388"
             }
         })
     </script>
