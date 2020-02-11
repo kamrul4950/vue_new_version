@@ -1,19 +1,54 @@
 var app =new Vue({
     el:"#app",
     data:{
-        name:"",
-        live:""
+        frist_num:"",
+        second_num:"",
+        result:"",
+        hasError:false,
+        error:""
     },
     methods:{
-        testingMethod(){
-            alert('Welcome '+this.name);
+        sumationFun(){
+            
+           var nam1 = Number(this.frist_num) ;
+           var nam2 = Number(this.second_num) ;
+           var result =nam1+nam2;
+           this.result=result;
         },
-        liveValidation(){
-            if(this.name=="Shopon"){
-                this.live="Yea I Know you Md Kamrul Asad"
-            }else{
-                this.live="Sorry you are unknown persion pls contact admin"
-            }
+        subtractionFun(){
+            
+            var nam1 = Number(this.frist_num);
+            var nam2 = Number(this.second_num);
+            var result = nam1-nam2;
+            this.result=result;
+        },
+        divisionFun(){
+            
+
+            var nam1=Number(this.frist_num);
+            var nam2=Number(this.second_num);
+            var result =nam1/nam2;
+            this.result=result;
+        },
+        multiplactionFun(){
+           
+
+            var nam1 = Number(this.frist_num);
+            var nam2 = Number(this.second_num);
+            var result =nam1*nam2;
+            this.result=result;
+        },
+        numberChick(){
+            if(isNaN(this.frist_num)){
+                            this.hasError=true;
+                            this.error="Please enter valide number..";
+                        }else if(isNaN(this.second_num)){
+                            this.hasError=true;
+                            this.error="Please enter valide number";
+                        }else{
+                            this.hasError=false;
+                            this.error="";
+                        }
         }
     }
 })

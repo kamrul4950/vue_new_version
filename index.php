@@ -9,12 +9,43 @@
 </head>
 <body>
         <div id="app">
-          <div class="container mt-4">
-            <span class="text-success">Welcome : {{name}}</span>
-            <p class="text-danger">{{live}}</p>
-            <input type="text" class="form-control" v-model="name" v-on:keyup="liveValidation">
-            <input type="submit" v-on:click="testingMethod" class="btn btn-success mt-2">
-          </div>
+        <div class="container">
+          <h2>Calclutor Project Vue Js</h2>
+            <div class="card">
+              <div class="card-body">
+                  
+                  <div class="alert alert-danger" v-if="hasError">
+                    Error : {{error}}
+                  </div>
+                  <div class="alert alert-success" v-else>
+                    Result : {{result}}
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="text" v-model="frist_num" class="form-control" v-on:keyup="numberChick">
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" v-model="second_num" class="form-control" v-on:keyup="numberChick">
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-success btn-block" v-on:click="sumationFun">+</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-success btn-block" v-on:click="subtractionFun">-</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-success btn-block" v-on:click="divisionFun">/</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-success btn-block" v-on:click="multiplactionFun">*</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+          
         </div>
         
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
